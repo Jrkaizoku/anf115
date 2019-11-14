@@ -1,0 +1,50 @@
+{% extends "base/base.html" %}
+
+{% block contenido %}
+    <div class="content-frame">
+        <!-- START CONTENT FRAME TOP -->
+        <div class="content-frame-top">
+            <div class="page-title">
+
+                <h2><span class="fa fa-inbox "></span> Usuarios
+                    <small></small>
+                </h2>
+            </div>
+        </div>
+        <br> <br> <br> <br> <br> <br>
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading ui-draggable-handle">
+                    <div id="inicial">
+                        <h3 class="panel-title">Empleados</h3></div>
+                </div>
+                <div class="panel-body">
+                    <table class="table datatable">
+                        <thead>
+                        <tr>
+                            <th>Usuario</th>
+                            <th>Nombre</th>
+                            <th>Apellidos</th>
+                            <th>Cargo</th>
+                            <th>Password</th>
+
+                        </tr>
+                        </thead>
+                        {% for usuario in usuarios %}
+                            <tr>
+                            <td>{{ usuario.usuario }}</td>
+                            <td>{{ usuario.nombre }}</td>
+                            <td>{{ usuario.apellidos }}</td>
+                            <td>{{ usuario.puesto }}</td>
+                            <td>{{ usuario.password }}</td>
+
+                        {% endfor %}
+
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+{% endblock contenido %}

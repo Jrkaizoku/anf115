@@ -1,0 +1,204 @@
+{% extends "base/base.html" %}
+{% block contenido %}
+    <div class="content-frame">
+        <!-- START CONTENT FRAME TOP -->
+        <div class="content-frame-top">
+            <div class="page-title">
+
+                <h2><span class="fa fa-inbox"></span> Costo por Proceso {{ idCif }}
+                    <small></small>
+                </h2>
+            </div>
+        </div>
+        <br> <br> <br> <br> <br> <br>
+     
+     <h1>Costo Indirectos De Fabricacion<h2>
+ 
+
+</div>
+<br><br><br>
+
+                    <div class="form-group " role="form">
+                        <h3>COSTOS INDIRECTOS VARIABLES</h3>
+                        <label class="control-label col-md-2">Datos del CIF variables</label>
+                       <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+  <thead>
+    <tr>
+      <th>CIF </th>
+      <th>precio</th>
+      <th>horas </th>
+      <th>mod </th>
+      <th>total</th>
+     
+
+    </tr>
+  </thead>
+
+  <tbody>
+
+    <tr>
+       <td>Electricidad</td>
+      <td>{{totalmod}}</td>
+      <td>{{v}}</td>
+      <td>{{v}}</td>
+      <td>{{total1}}</td>
+      
+    
+    </tr>
+   <tr>
+       <td>Maquinaria</td>
+      <td>{{v}}</td>
+      <td>{{v}}</td>
+      <td>{{v}}</td>
+      <td>{{total3}}</td>
+       
+    
+    </tr>
+    <tr>
+       <td>Depreciacion</td>
+      <td>{{b}}</td>
+      <td>{{g}}</td>
+      <td>{{p}}</td>
+      <td>{{total4}}</td>
+       
+    
+    </tr>
+
+  </tbody>
+</table>
+
+                         <br> <br>
+                        <h3>COSTOS INDIRECTOS FIJOS</h3>
+                        <label class="control-label col-md-2">Datos del CIF</label>
+<table class="table table-striped table-bordered table-hover" id="dataTables-example">
+  <thead>
+    <tr>
+      <th>CIF </th>
+      <th>precio</th>
+      <th>horas necesarias</th>
+        <th>salario </th>
+      <th>total</th>
+     
+
+    </tr>
+  </thead>
+
+  <tbody>
+
+    <tr>
+       <td>tornillos</td>
+      <td>0.02</td>
+      <td>6</td>
+      <td></td>
+      <td>{{total1}}</td>
+      
+    
+    </tr>
+   <tr>
+       <td>cajas</td>
+      <td>0.56</td>
+      <td>4</td>
+      <td></td>
+      <td>{{total2}}</td>
+       
+    
+    </tr>
+  </tbody>
+</table>
+                        <br> <br>
+                    
+                        
+                    </div>
+
+                    <br> <br>
+                                
+
+
+                    <div class="panel panel-default">
+
+
+                        <div class="panel-body panel-body-table">
+
+ <h1>COSTO DE MATERIAL DE ELABORACION</h1> 
+ <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+  <thead>
+    <tr>
+      <th>material </th>
+      <th>precio</th>
+      <th>MOD</th>
+        <th>existencia</th>
+      <th>total</th>
+     
+
+    </tr>
+  </thead>
+
+  <tbody>
+
+    <tr>
+       <td>PET</td>
+      <td>1.50</td>
+      <td></td>
+      <td></td>
+      <td>{{total}}</td>
+      
+    
+    </tr>
+   <tr>
+       <td>HDPE</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+       
+    
+    </tr>
+    <tr>
+       <td>LDPE</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+       
+    
+    </tr>
+  </tbody>
+</table>
+
+<h1>SALARIO</h1> 
+<table class="table table-striped table-bordered table-hover" id="dataTables-example">
+  <thead>
+    <tr>
+      <th>material </th>
+      <th>precio</th>
+      <th>MOD</th>
+        <th>existencia</th>
+      <th>total</th>
+     
+
+    </tr>
+  </thead>
+
+  <tbody>
+  </tbody>
+</table>
+
+
+<h1>COSTO DEL PRODUCTO</h1>
+  </div></div>
+
+            </form>
+
+        </div>
+    </div>
+
+
+
+
+{% endblock %}
+{% block footer %}
+    <script type="text/javascript">
+
+        </script>
+{% endblock %}
+

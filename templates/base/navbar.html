@@ -1,0 +1,106 @@
+{% load static %}
+<!-- START PAGE SIDEBAR -->
+<div class="page-sidebar">
+    <!-- START X-NAVIGATION -->
+    <ul class="x-navigation">
+        <li class="xn-logo">
+            <a>SIC-115</a>
+
+            <a href="{% url 'prueba' %}" class="x-navigation-control"></a>
+        </li>
+        <li class="xn-profile active">{% if user.is_authenticated %}
+
+
+                        <div class="profile">
+
+                            <div class="profile-data">
+                                <div class="profile-data-name">Bienvenido</div>
+                                <div class="profile-data-title">{{ user.username }}</div>
+                                <div class="profile-data-title">{{ user.first_name  }}</div>
+                            </div>
+
+                        </div>
+        {% endif %}
+                    </li>
+
+        <li>
+            <a href="{% url 'prueba' %}"><span class="fa fa-desktop"></span> <span class="xn-text">Inicio</span></a>
+        </li>
+        {% if user.is_authenticated %}
+            {% if  user.username == "admin" or user.first_name == "Jefe administrativo" or user.first_name == "Recepcionista" %}
+                <li class="xn-openable">
+                    <a href="#"><span class="fa fa-table"></span> <span class="xn-text">Registrar Transaccion</span></a>
+                    <ul>
+                        <li><a href="{% url 'transcuenta' %}"><span class="fa fa-image"></span>En Cuentas</a></li>
+                        <li><a href="{% url 'ventas' %}"><span class="fa fa-image"></span> Ventas</a></li>
+                        <li><a href="{% url 'compras' %}"><span class="fa fa-image"></span> Compras</a></li>
+
+                    </ul>
+                </li>
+
+            {% endif %}
+            {% if  user.username == "admin" or user.first_name == "Contabilidad" %}
+                <li class="xn-openable">
+                    <a href="#"><span class="fa fa-files-o"></span> <span class="xn-text">Estados Finacieros</span></a>
+                    <ul>
+                        {% for anioE in anios_esta %}
+
+                            <li><a href="{% url 'estados' anioE.anio %}"><span
+                                    class="fa fa-file"></span> {{ anioE.anio }}</a></li>
+                        {% endfor %}
+
+
+                    </ul>
+                </li>
+
+            {% endif %}
+            {% if  user.username == "admin" or  user.first_name == "Jefe produccion" or  user.first_name == "Jefe bodega" %}
+                <li class="xn-openable">
+                    <a href="#"><span class="fa fa-table"></span> <span class="xn-text">Inventarios</span></a>
+                    <ul>
+                        <li><a href="{% url 'inventarios' %}"><span class="fa fa-image"></span>Materia Prima</a></li>
+                        <li><a href="{% url 'inventarioProducto' %}"><span class="fa fa-image"></span>Producto Terminado</a>
+                        </li>
+                    </ul>
+                </li> {% endif %}
+            {% if  user.username == "admin" or user.first_name == "Contabilidad" or user.first_name == "Jefe administrativo" %}
+                <li>
+                    <a href="{% url 'empleados' %}"><span class="fa fa-list-alt"></span> <span class="xn-text">Planilla de sueldos</span></a>
+                </li>
+            {% endif %}
+            {% if  user.username == "admin" %}
+                <li>
+                    <a href="{% url 'usuarios' %}"><span class="fa fa-list-alt"></span> <span
+                            class="xn-text">Usuarios</span></a>
+                </li>
+            {% endif %}
+            {% if  user.username == "admin" or user.first_name == "Contabilidad" %}
+                <li>
+                    <a href="{% url 'periodoContable' %}"><span class="fa fa-list-alt"></span> <span class="xn-text">Período Contable</span></a>
+                </li>
+            {% endif %}
+            {% if  user.username == "admin" or user.first_name == "Contabilidad" or user.first_name == "Jefe produccion" or  user.first_name == "Jefe bodega" %}
+
+                <li>
+                    <a href="{% url 'catalogo' %}"><span class="fa fa-list-alt"></span> <span class="xn-text">Catálogo De Cuentas</span></a>
+                </li>
+            {% endif %}
+            {% if  user.username == "admin" or user.first_name == "Contabilidad" %}
+                <li class="xn-openable">
+                    <a href="#"><span class="fa fa-table"></span> <span class="xn-text">libros</span></a>
+                    <ul>
+                        <li><a href="{% url 'libroVenta' %}"><span class="fa fa-image"></span>Venta</a></li>
+                        <li><a href="{% url 'libroCompra' %}"><span class="fa fa-image"></span>Compra</a></li>
+
+                    </ul>
+                </li>
+            {% endif %}
+            <li>
+                    <a href="{% url 'costos' %}"><span class="fa fa-list-alt"></span> <span class="xn-text">Costos</span></a>
+                </li>
+
+        {% endif %}
+    </ul>
+    <!-- END X-NAVIGATION -->
+</div>
+<!-- END PAGE SIDEBAR -->

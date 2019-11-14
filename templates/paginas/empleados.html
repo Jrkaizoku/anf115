@@ -1,0 +1,63 @@
+{% extends "base/base.html" %}
+
+{% block contenido %}
+
+
+
+
+    <div class="content-frame-body" style="height: 100px;">
+        <div>
+            <div class="panel panel-default">
+                <div class="panel-heading ui-draggable-handle">
+                    Planilla de empleados
+                </div>
+                <div class="panel-body">
+    <table class="table table-bordered">
+    	<thead>
+    		<tr>
+				<td><b>#</b></td>
+    			<td><b>Nombre</b></td>
+    			<td><b>Cargo</b></td>
+    			<td><b>Sueldo</b></td>
+    			<td><b>Extra</b></td>
+    			<td><b>Vacaciones</b></td>
+    			<td><b>Devengado</b></td>
+    			<td><b>ISSS</b></td>
+    			<td><b>AFP</b></td>
+    			<td><b>Renta</b></td>
+    			<td><b>Otras Deducc.</b></td>
+    			<td><b>Sueldo Líquido</b></td>
+    		</tr>
+    	</thead>
+    	<tbody>
+    		{% if empleados %}
+    		{% for empleado2 in empleados %}
+    		<tr>
+					<td>{{empleado2.id}}</td>
+    			<td>{{empleado2.nombreCompleto}}</td>
+    			<td>{{empleado2.cargo}}</td>
+    			<td>$ {{empleado2.sueldoBase}}</td>
+    			<td>$ {{empleado2.ingresoExtra}}</td>
+    			<td>$ {{empleado2.vacaciones}}</td>
+    			<td>$ {{empleado2.totalDevengado}}</td>
+    			<td>$ {{empleado2.isss}}</td>
+    			<td>$ {{empleado2.afp}}</td>
+    			<td>$ {{empleado2.renta}}</td>
+    			<td>$ {{empleado2.otrasDeducciones}}</td>
+    			<td>$ {{empleado2.sueldoLiquido}}</td>
+    		</tr>
+    		{% endfor %}
+
+    		{% else %}
+    		<h1>no hay registros</h1>
+            {% endif %}
+            <tr>
+                <td colspan="5" style="background: #eee;"><h4><b>Total Gastos Por Salario</b></h4></td>
+				<td style="background: #eee;"><h5><b><ins>$ 9271.50</ins></b></h5></td>
+				<td colspan="5"><h3><b>Total en sueldos Liquidos</b></h3></td>
+				<td><h5><b>$ 7516.26</b></h5></td>
+            </tr>
+    	</tbody>
+    </table>
+</div>
+{% endblock contenido %}

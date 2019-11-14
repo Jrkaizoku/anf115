@@ -1,0 +1,59 @@
+{% extends "base/base.html" %}
+{% block contenido %}
+
+ <div class="content-frame">
+        <!-- START CONTENT FRAME TOP -->
+        <div class="content-frame-top">
+            <div class="page-title">
+
+                <h2><span class="fa fa-inbox "></span> Costos de productos terminados
+                    <small></small>
+                </h2>
+            </div>
+        </div>
+        <br> <br> <br> <br> <br> <br>
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+			<div class="panel-heading ui-draggable-handle">
+				   <div id="inicial">
+					<h3 class="panel-title" >Costos</h3></div></div>
+		<div class="panel-body">
+    <table class="table datatable">
+    	<thead>
+    		<tr>
+    			<th>Producto</th>
+    			<th>Precio Unitario</th>
+
+    		</tr>
+    	</thead>
+    	<tbody>
+
+    		<tr>
+    			<td>Mesas</td>
+    			<td>{{mesas.precExistencia}}</td>
+    		</tr>
+            <tr>
+    			<td>Losas</td>
+    			<td>{{losas.precExistencia}}</td>
+    		</tr>
+            <tr>
+    			<td>Bancas</td>
+    			<td>{{bancas.precExistencia}}</td>
+    		</tr>
+            <tr>
+    			<td>Sillas</td>
+    			<td>{{sillas.precExistencia}}</td>
+    		</tr>
+            <tr>
+    			<td>Figuras</td>
+    			<td>{{figuras.precExistencia}}</td>
+    		</tr>
+
+
+    	</tbody>
+	</table>
+</div></div>
+             </div> </div>
+
+
+{% endblock %}

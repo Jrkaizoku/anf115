@@ -1,0 +1,48 @@
+{% extends "base/base.html" %}
+
+{% block contenido %}
+<div class="content-frame">
+		<!-- START CONTENT FRAME TOP -->
+		<div class="content-frame-top">
+			<div class="page-title">
+	
+				<h2><span class="fa fa-inbox "></span> Catalogo de cuentas
+					<small></small>
+				</h2>
+			</div>
+		</div>
+		<br> <br> <br> <br> <br> <br>
+		<div class="col-lg-12">
+		<div class="panel panel-default">
+			<div class="panel-heading ui-draggable-handle">
+				   <div id="inicial">
+					<h3 class="panel-title" >Cuentas</h3></div></div>
+		<div class="panel-body">
+    <table class="table datatable">
+    	<thead>
+    		<tr>
+    			<th>Codigo</th>
+    			<th>Nombre</th>
+    			<th>tipoCuenta</th>
+    		</tr>
+    	</thead>
+    	<tbody>
+    		{% if cuentas %}
+    		{% for cuenta in cuentas %}
+    		<tr>
+    			<td>{{cuenta.codigoN}}</td>
+    			<td>{{cuenta.nombre}}</td>
+    			<td>{{cuenta.tipoCuenta}}</td>
+    		</tr>
+    		{% endfor %}
+
+    		{% else %}
+    		<h1>no hay registros</h1>
+    		{% endif %}
+    	</tbody>
+	</table>
+</div></div></div>
+
+
+</div>
+{% endblock %}
